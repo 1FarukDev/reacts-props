@@ -1,10 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import Jokes from './Jokes';
+import jokesData from './jokesData';
 export default function App() {
- return(
-    <div>
-        <Jokes 
+   const jokeElement = jokesData.map(Jokes => {
+      return <Jokes Setup={Jokes.Setup}/>
+   })
+  return(
+   {jokeElement}
+  )
+}
+
+/* <Jokes 
            Setup="I got my daughter a fridge for her birthday"
            Punchline="I can't wait to see her face light up when she opens it."   
         />
@@ -19,8 +26,5 @@ export default function App() {
          <Jokes
           Setup="Why dont pirates travel on a mountain road?"
           Punchline="Scurvy."
-        />
-    </div>
- )
-}
+        /> */
 
