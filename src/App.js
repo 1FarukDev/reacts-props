@@ -1,14 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import Jokes from './Jokes';
+import jokes from './jokes'
 import jokesData from './jokesData';
+import Joke from './Joke';
 export default function App() {
-   const jokeElement = jokesData.map(Jokes => {
-      return <Jokes Setup={Jokes.Setup}/>
+   const jokeElements = jokesData.map(jo => {
+      return <Joke setup= {jo.Setup} punchline={jo.Punchline}/>
    })
-  return(
-   {jokeElement}
-  )
+   return (
+   <div>
+      {jokeElements}
+   </div>
+      )
 }
 
 /* <Jokes 
